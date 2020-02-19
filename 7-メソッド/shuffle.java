@@ -21,6 +21,10 @@ public class shuffle {
 			}
 			System.out.printf("\n");
 		}
+		
+		for(int k=0; k<10; k++) {
+			System.out.printf("%2d",num[k]);
+		}
 	}
 	static void mix(int x,int y) {
 		o = num[x];
