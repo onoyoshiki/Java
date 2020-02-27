@@ -3,8 +3,8 @@ import java.util.Scanner;
 import java.io.File;
 
 public class MyFielTest {
-	static int fileCounter = 0;
 	static int byteCounter = 0;
+	static ArrayList<MyFiles> cityList = new ArrayList<MyFiles>();
 	public static void main(String[] args) {
 		
 		@SuppressWarnings("resource")
@@ -19,7 +19,9 @@ public class MyFielTest {
 			System.out.printf("ありません");
 			System.exit(1);
 		}
-		System.out.printf("ファイル数:%,d\n", fileCounter);
+		for(int i=0; i<cityList.size(); i++)
+			System.out.printf("%s",cityList.get(i));
+		System.out.printf("ファイル数:%,d\n", cityList.size());
 		System.out.printf("バイト数:%,d\n", byteCounter);
 	}
 	
@@ -35,10 +37,7 @@ public class MyFielTest {
 				listUpPath(myDirFile);
 			}else {
 				MyFiles myfiles = new MyFiles(myDirFile.getName(),myDirFile.length(),myDirFile.getParent());
-				ArrayList<String> cityList = new ArrayList<String>();
-				cityList.add(myfiles.toString());
-				System.out.printf(cityList.get(0));
-				fileCounter++;
+				cityList.add(myfiles);
 				byteCounter += myDirFile.length();
 			}
 		}
