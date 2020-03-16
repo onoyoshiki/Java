@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd"
+	version="2.5">
+
+	<context-param>
+		<param-name>book.title</param-name>
+		<param-value>独習サーバサイドJava</param-value>
+	</context-param>
+	<context-param>
+		<param-name>smtp.host</param-name>
+		<param-value>smtp.XXXXX.ne.jp</param-value>
+	</context-param>
+	<!--
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.sql.dataSource</param-name>
+		<param-value>jdbc:mysql://localhost/selfjsp?useUnicode=true&amp;characterEncoding=Windows-31J,org.gjt.mm.mysql.Driver,usr,passwd</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.sql.maxRows</param-name>
+		<param-value>10</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
+		<param-value>Windows-31J</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.locale</param-name>
+		<param-value>de</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.fallbackLocale</param-name>
+		<param-value>en_US</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.timeZone</param-name>
+		<param-value>JST</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>msg</param-value>
+	</context-param>
+	-->
+
+	<!--
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>chap8.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>Windows-31J</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+	-->
+
+	<!--
+	<listener>
+		<listener-class>chap8.SessListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>chap8.InitParamListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>chap8.RequestListener</listener-class>
+	</listener>
+	-->
+	
+	<servlet>
+		<servlet-name>EntryServlet</servlet-name>
+		<servlet-class>servlet.EntryServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>EntryServlet</servlet-name>
+		<url-pattern>/servlet/EntryServlet</url-pattern>
+	</servlet-mapping>
+
+	<session-config>
+		<session-timeout>10</session-timeout>
+	</session-config>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!--
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/ErrorServlet</location>
+	</error-page>
+	-->
+
+	<jsp-config>
+		<!--
+		<taglib>
+			<taglib-uri>http://www.wings.msn.to/WingsTagLibs-1.0</taglib-uri>
+			<taglib-location>/WEB-INF/WingsTag.tld</taglib-location>
+		</taglib>
+		-->
+
+		<!--
+		<jsp-property-group>
+			<display-name>JSP Config</display-name>
+			<url-pattern>*.jsp</url-pattern>
+			<el-ignored>false</el-ignored>
+			<page-encoding>Windows-31J</page-encoding>
+			<scripting-invalid>false</scripting-invalid>
+			<include-prelude>/common.jsp</include-prelude>
+		</jsp-property-group>
+		-->
+	</jsp-config>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Chap7 Form Auth</web-resource-name>
+			<url-pattern>/chap7/auth/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+			<role-name>manager</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>Chap7 Form-Auth</realm-name>
+		<form-login-config>
+			<form-login-page>/chap7/login.jsp</form-login-page>
+			<form-error-page>/chap7/login_err.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+
+	<security-role>
+		<role-name>admin</role-name>
+	</security-role>
+	<security-role>
+		<role-name>manager</role-name>
+	</security-role>
+
+</web-app>
