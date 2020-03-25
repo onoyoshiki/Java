@@ -1,15 +1,31 @@
-<%@ page contentType="text/html;charset=Windows-31J" %>
+<%@ page contentType="text/html;charset=utf-8" %>
 <html>
-<head>
-<title>“o˜^‰æ–Ê</title>
-</head>
-<body>
-<form method="POST" action="EntryServlet">
-<h1>“o˜^</h1>
-–¼‘Oi©j<input type="text" name="Last_name"><br>
-–¼‘OiŽj<input type="text" name="Full_name"><br>
-’a¶“ú<input type="text" name="Birthday"><br>
-ƒ[ƒ‹ƒAƒhƒŒƒX<input type="text" name="mail_Address"><br>
-<input type="submit" value="“o˜^">
-</body>
+  <head>
+    <title>ç™»éŒ²ç”»é¢</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/entryStyle.css">
+  </head>
+  <body>
+    <header>
+      <h1>ç™»éŒ²</h1>
+    </header>
+    <form method="POST" action="EntryServlet">
+    <div class="EntryList">
+      <ul class="ListName">
+          åå‰ï¼ˆå§“ï¼‰<br>
+          åå‰ï¼ˆæ°ï¼‰<br>
+          èª•ç”Ÿæ—¥<br>
+          ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹<br>
+      </ul>
+      <ul class="ListForm">
+          ï¼š<input type="text" name="Last_name" class="InputForm"><br>
+          ï¼š<input type="text" name="Full_name" class="InputForm"><br>
+          ï¼š<input type="text" name="Birthday" class="InputForm"><br>
+          ï¼š<input type="text" name="mail_Address" class="InputForm"><br>
+      </ul>
+    </div>
+    <footer>
+      <input type="submit" value="ç™»éŒ²">
+    </footer>
+      </form>
+  </body>
 </html>

@@ -1,19 +1,34 @@
-<%@ page contentType="text/html;charset=Windows-31J" %>
+<%@ page contentType="text/html;charset=utf-8" %>
 <html>
-<head>
-<title>Šm”F‰æ–Ê</title>
-</head>
-<body>
-<form method="POST" action="finish.jsp">
-<h1>Šm”F</h1>
-–¼‘Oi©jF${requestScope['Name1']}<br>
-–¼‘OijF${requestScope['Name2']}<br>
-’a¶“úF${requestScope['Birth']}<br>
-ƒ[ƒ‹ƒAƒhƒŒƒXF${requestScope['Address']}<br>
-<input type="submit" value="“o˜^">
-</form>
-<form method="POST" action="entry.jsp">
-<input type="submit" value="–ß‚é">
-</form>
-</body>
+  <head>
+    <title>ç¢ºèªç”»é¢</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/entryStyle.css">
+  </head>
+  <body>
+    <header>
+      <h1>ç¢ºèª</h1>
+    </header>
+      <div class="EntryList">
+        <ul class="ListName">
+            åå‰ï¼ˆå§“ï¼‰<br>
+            åå‰ï¼ˆæ°ï¼‰<br>
+            èª•ç”Ÿæ—¥<br>
+            ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹<br>
+        </ul>
+        <form method="POST" action="finish.jsp" class="ent">
+        <ul class="ListForm">
+            ï¼š${requestScope['Name1']}<input type="hidden" name="HidName1" value=${requestScope['Name1']}><br>
+            ï¼š${requestScope['Name2']}<input type="hidden" name="HidName2" value=${requestScope['Name2']}><br>
+            ï¼š${requestScope['Birth']}<input type="hidden" name="HidBirth" value=${requestScope['Birth']}><br>
+            ï¼š${requestScope['Address']}<input type="hidden" name="HidAddress" value=${requestScope['Address']}><br>
+        </ul>
+      </div>
+    <footer>
+          <input type="submit" value="ç™»éŒ²">
+        
+        <form method="POST" action="entry.jsp" class="ent">
+          <input type="submit" value="æˆ»ã‚‹">
+        </form>
+    </footer>
+  </body>
 </html>

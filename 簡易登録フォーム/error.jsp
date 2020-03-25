@@ -1,13 +1,20 @@
-<%@ page contentType="text/html;charset=Windows-31J" %>
+<%@ page contentType="text/html;charset=utf-8" %>
 <html>
-<head>
-<title>ƒGƒ‰[‰æ–Ê</title>
-</head>
-<body>
-<form method="POST" action="entry.jsp">
-<h1>ƒGƒ‰[</h1>
-${requestScope['errmsg']}
-<input type="submit" value="–ß‚é">
-</form>
-</body>
+  <head>
+    <title>ã‚¨ãƒ©ãƒ¼ç”»é¢</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/entryStyle.css">
+  </head>
+  <body>
+    <header>
+      <h1>ã‚¨ãƒ©ãƒ¼</h1>
+    </header>
+    <div class="errmsg">
+      ${requestScope['errmsg']}
+    </div>
+    <footer>
+      <form method="POST" action="entry.jsp">
+        <input type="submit" value="æˆ»ã‚‹">
+      </form>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,56 @@
+header{
+  font-weight: normal;
+  font-size: 24px;
+  color: aqua;
+  width: 400px;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+body{
+  margin: 0;
+  background-color: rgba(46, 162, 216, 0.979);
+}
+
+ul{
+  color: yellow;
+  padding: 0;
+  text-align: left;
+}
+
+.judge{
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.errmsg{
+  color: yellow;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.EntryList{
+  width: 295px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.InputForm{
+  width: 150px;
+}
+
+.ent{
+  margin-right: 8px;
+}
+
+footer{
+  display: flex;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
